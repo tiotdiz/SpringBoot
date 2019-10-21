@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        #myDiv {}
+        .my-class {}
+        div {}
+    </style>
+</head>
+<body>
+<div id="myDiv">
+    abc
+</div>
+<div class="my-class">
+    def
+</div>
+<div class="my-class">
+    123
+</div>
+<input id="myBtn" type="button" value="点我消失"/><br/>
+<a id="myA">百度</a>
+
+<script type="text/javascript" src="/day03/js/jquery/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+$(function() {
+//等价于window.onload = function() {};
+    // jQuery对象与DOM对象
+    //dom innerHTML
+    //native code
+    //获取
+    var html = $('#myDiv').html();//document.getElementById('myDiv')
+
+    //$('#myDiv').html('<a href="http://www.baidu.com">百度</a>');
+    html = $('.my-class').html();
+    html = $('div').html();
+    html = $('div')[0].innerHTML;//把jquery对象转换为DOM对象
+    var dom = $('div')[0];
+    html = $(dom).html();//把DOM对象转换为jQuery对象
+    //console.log('div='+html);
+    $('div').each(function() {
+        var html = $(this).html();
+        console.log('html='+html);
+    });
+    $('div').css('background-color', 'red');
+    $('div').css('margin', '20px');
+    $('div').click(function() {
+        alert(Math.random());
+    })
+    $('#myBtn').click(function () {
+        $('div').fadeOut();
+    });
+    $('#myA').attr('href', 'http://www.baidu.com');
+
+    //$.get();
+    //$.post();
+    $.ajax({
+        type : 'GET',
+        url : 'server_response.txt',//不能跨域
+        dataType : 'json',
+        //async : false,
+        //data : {},
+        success : function(data) {
+            console.log(data);
+        }
+    });
+});
+</script>
+</body>
+</html>

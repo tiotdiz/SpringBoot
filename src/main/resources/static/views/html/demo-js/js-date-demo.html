@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript">
+        //alert(1);
+        console.log("hello world")
+        var date = new Date();
+        var year = date.getFullYear();//2018
+        var month = date.getMonth();//0-11
+        var dt = date.getDate();//1-31
+        var hour = date.getHours();//0-23
+        var min = date.getMinutes();//
+        var second = date.getSeconds();
+        console.log(min);
+        //alert(2);
+
+        var phone = 1379999;
+        var flag = /[0-9]{11}/.test(phone);
+        console.log(flag);
+
+        var obj = {};//new Object();
+        obj.id = 11;//obj['id']
+        obj.name = 'xiao红';
+        console.log(obj);
+        for (var p in obj) {
+            console.log(p + '=' +obj[p]);
+        }
+
+        var n = 1;
+        var s = '1';//Number String Boolean Null Undefined
+        var flag = (n === s);//!==
+        // == !=
+        console.log(flag);
+    </script>
+</head>
+<body>
+aa
+</body>
+</html>

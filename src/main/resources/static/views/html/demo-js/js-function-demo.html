@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript">
+        var obj = {};
+        obj.id = 2;
+        obj.sayHel = function (str) {
+            alert(str);
+        };
+        //obj.sayHel('hehe');
+        //myfunction('hello world');
+        var myfunction = function (str) {
+            alert(str);
+        }
+
+        function sayHello(str) {
+            var name//undefined
+            //alert(str);
+            var obj = {};
+            obj = null;
+            name = undefined;
+
+            if(str) {//非空检查
+                //typeof(str)
+                //number string boolean undefined object
+                if(typeof str === 'string') {
+
+                }
+                // instanceof
+            }
+        }
+
+        function max(a, b) {
+            var res = a;
+            if(a < b) {
+                res = b;
+            }
+            return res;
+        }
+        var ret =  max(2, 4);//sayHello('ss');
+        //alert(ret);
+        var id = 2;
+        //var id = 1;//全局变量
+        //变量作用域
+        function testScope(str) {//局部变量
+            var id = 1;
+            var name = 'a';//局部变量
+            alert('testScope id='+id);
+            alert('name='+name);
+            alert('str='+str);
+        }
+        function testScope2() {
+            alert('testScope2 id = '+id);
+        }
+        testScope('hello');
+        alert('global id='+id);
+        testScope2();
+    </script>
+</head>
+<body>
+
+</body>
+</html>

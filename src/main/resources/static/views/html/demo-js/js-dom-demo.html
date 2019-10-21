@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript">
+        /*window.onload = function() {
+            //如果我们在JS中有DOM操作的话
+            //它有一个前提DOM必须已经加载完成
+            //把我们的JS代码写到window.onload方法定义中
+            //就可以保证JS代码执行的时候我们的DOM就已经构建完成了
+            var divarr = document.getElementsByTagName('div');
+            for (var i = 0; i < divarr.length; i++) {
+                var divObj = divarr[i];
+                console.log('divObj='+divObj);
+            }
+            console.log('divarr='+divarr.length);
+        }*/
+    </script>
+</head>
+<body>
+<div id="mydiv">
+    abc
+</div>
+<div id="mydiv2">
+    def
+</div>
+<div>
+    123
+</div>
+<div class="my-class">
+    456
+</div>
+<script type="text/javascript">
+    //如果我们在JS中有DOM操作的话
+    //它有一个前提DOM必须已经加载完成
+    //把我们的JS代码写到window.onload方法定义中
+    //就可以保证JS代码执行的时候我们的DOM就已经构建完成了
+    var divarr = document.getElementsByTagName('div');
+    for (var i = 0; i < divarr.length; i++) {
+        var divObj = divarr[i];
+        //console.log('divObj='+divObj);
+    }
+    //console.log('divarr[2].innerHTML='+divarr[2].innerHTML);
+    //alert(1);
+    divarr[2].innerHTML = '<a href="http://www.baidu.com">百度</a>';//'102030';
+    //console.log('divarr[2].innerHTML='+divarr[2].innerHTML);
+    //console.log('divarr='+divarr.length);
+    var divarr2 = document.getElementsByClassName('my-class');
+    divarr2[0].innerHTML = '<a href="http://www.qq.com">tencent</a>';
+    var mydiv = document.getElementById('mydiv');
+    mydiv.style.color = 'red';
+    mydiv.style.backgroundColor = 'gray';//style="background-color:grey;"
+    var h1 = document.createElement('h1');//<h1></h1>
+    var t1 = document.createTextNode('def');//def
+    h1.appendChild(t1);//<h1>def</h1>
+    var mydiv2 = document.getElementById('mydiv2');
+    mydiv2.appendChild(h1);
+    //alert(1);
+    //mydiv2.removeChild(h1);
+</script>
+</body>
+</html>

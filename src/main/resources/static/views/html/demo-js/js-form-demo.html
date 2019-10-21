@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript">
+        function checkName(name) {
+            if (!name) {
+                alert('姓名不能为空');
+            }
+        }
+        function checkForm() {
+            var sexarr = document.getElementsByName('sex');
+            for (var i = 0; i < sexarr.length; i++) {
+                var domObj = sexarr[i];
+                var val = domObj.value;
+                //console.log('性别=' + val);
+            }
+            var myfrm = document.getElementById('myFrm');
+            var sex = myfrm.sex.value;
+            console.log('sex='+sex);
+            var name = myfrm.name.value;
+            console.log('name='+name);
+            var prov = myfrm.province.value;
+            console.log('prov='+prov);
+            var hobbyarr = myfrm.hobby;//多选按钮的value和其他的不太一样要注意
+            for (var i = 0; i < hobbyarr.length; i++) {
+                var domObj = hobbyarr[i];
+                var val = domObj.value;
+                console.log('hobby_val='+val);
+            }
+
+        }
+    </script>
+</head>
+<body>
+<form id="myFrm">
+    姓名:<input type="text" name="name" value="小强" onblur="checkName(this.value)"/><br/>
+    省份:<select name="province">
+        <option value="0">河北省</option>
+        <option value="1">山东省</option>
+        <option value="2" selected="selected">山西省</option>
+    </select><br/>
+    性别:<input type="radio" name="sex" value="0" checked="checked"/>男<input type="radio" name="sex" value="1"/>女<br/>
+    爱好:<input type="checkbox" name="hobby" value="0" checked="checked"/>吃<input type="checkbox" name="hobby" value="1"/>睡<br/>
+    <input type="button" value="提交" onclick="checkForm()"/>
+</form>
+</body>
+</html>
